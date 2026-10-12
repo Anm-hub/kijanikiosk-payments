@@ -39,4 +39,3 @@ function formatAmount(amountCents, currency) {
 }
 
 module.exports = { calculateFee, validatePayment, formatAmount, SUPPORTED_CURRENCIES };
-const unusedFaultVar = 1;
