@@ -10,7 +10,7 @@ pipeline {
         APP_NAME         = 'kijanikiosk-payments'
         NODE_ENV         = 'test'
         BUILD_DIR        = 'dist'
-        NEXUS_REGISTRY   = 'http://nexus:8081/repository/npm-kijanikiosk/'
+        NEXUS_REGISTRY   = 'http://nexus:8081/repository/npm-kijanikiosk-fault/'
         NEXUS_BROWSE_URL = 'http://localhost:8081/repository/npm-kijanikiosk/'
         npm_config_cache = "${WORKSPACE}/.npm"
         npm_config_update_notifier = 'false'
