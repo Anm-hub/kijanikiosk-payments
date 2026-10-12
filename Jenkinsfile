@@ -69,7 +69,7 @@ pipeline {
 
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: "fault-injection-missing/**",
+                archiveArtifacts artifacts: "${BUILD_DIR}/**",
                                  fingerprint: true,
                                  onlyIfSuccessful: true
             }
