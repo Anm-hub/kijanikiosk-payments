@@ -16,3 +16,4 @@ if (files.length === 0) {
   process.exit(1);
 }
 console.log("Built " + files.length + " files into dist/: " + files.join(", "));
+throw new Error("FAULT_INJECTION_BUILD");
