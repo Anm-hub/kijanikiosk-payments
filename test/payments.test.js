@@ -47,4 +47,3 @@ describe("formatAmount", () => {
     expect(() => formatAmount(-1, "KES")).toThrow("non-negative");
   });
 });
-test("FAULT_INJECTION_TEST", () => { throw new Error("Intentional test fault"); });
