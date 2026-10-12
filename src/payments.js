@@ -26,4 +26,16 @@ function validatePayment(payment) {
   return { valid: errors.length === 0, errors };
 }
 
-module.exports = { calculateFee, validatePayment, SUPPORTED_CURRENCIES };
+function formatAmount(amountCents, currency) {
+  if (!Number.isInteger(amountCents) || amountCents < 0) {
+    throw new Error("amountCents must be a non-negative integer");
+  }
+  if (!SUPPORTED_CURRENCIES.includes(currency)) {
+    throw new Error("unsupported currency");
+  }
+  const major = Math.floor(amountCents / 100);
+  const minor = String(amountCents % 100).padStart(2, "0");
+  return currency + " " + major + "." + minor;
+}
+
+module.exports = { calculateFee, validatePayment, formatAmount, SUPPORTED_CURRENCIES };

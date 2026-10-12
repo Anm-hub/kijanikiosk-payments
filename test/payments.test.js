@@ -1,6 +1,6 @@
 "use strict";
 
-const { calculateFee, validatePayment } = require("../src/payments");
+const { calculateFee, validatePayment, formatAmount } = require("../src/payments");
 
 describe("calculateFee", () => {
   test("applies the rate and rounds to whole cents", () => {
@@ -31,5 +31,19 @@ describe("validatePayment", () => {
 
   test("rejects a non-object", () => {
     expect(validatePayment(null).valid).toBe(false);
+  });
+});
+
+describe("formatAmount", () => {
+  test("formats cents as a currency string", () => {
+    expect(formatAmount(12345, "KES")).toBe("KES 123.45");
+  });
+
+  test("pads single-digit cents", () => {
+    expect(formatAmount(5, "USD")).toBe("USD 0.05");
+  });
+
+  test("rejects negative amounts", () => {
+    expect(() => formatAmount(-1, "KES")).toThrow("non-negative");
   });
 });

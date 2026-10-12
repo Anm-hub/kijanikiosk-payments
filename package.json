@@ -1,9 +1,11 @@
 {
   "name": "kijanikiosk-payments",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "KijaniKiosk payments service (CI pipeline target)",
   "main": "dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "node dist/server.js",
     "lint": "eslint src test scripts",
@@ -15,7 +17,13 @@
     "testEnvironment": "node",
     "reporters": [
       "default",
-      ["jest-junit", { "outputDirectory": "test-results", "outputName": "junit.xml" }]
+      [
+        "jest-junit",
+        {
+          "outputDirectory": "test-results",
+          "outputName": "junit.xml"
+        }
+      ]
     ]
   },
   "devDependencies": {
