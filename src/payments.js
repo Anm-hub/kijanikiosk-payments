@@ -1,6 +1,11 @@
 "use strict";
 
 const SUPPORTED_CURRENCIES = ["KES", "USD"];
+const ORDER_ID_REGEX = /^[A-Za-z0-9][A-Za-z0-9-]{2,63}$/;
+
+function isValidOrderId(orderId) {
+  return typeof orderId === "string" && ORDER_ID_REGEX.test(orderId);
+}
 
 function calculateFee(amountCents, rate) {
   if (!Number.isInteger(amountCents) || amountCents <= 0) {
@@ -38,4 +43,11 @@ function formatAmount(amountCents, currency) {
   return currency + " " + major + "." + minor;
 }
 
-module.exports = { calculateFee, validatePayment, formatAmount, SUPPORTED_CURRENCIES };
+module.exports = {
+  calculateFee,
+  validatePayment,
+  formatAmount,
+  isValidOrderId,
+  SUPPORTED_CURRENCIES,
+};
+

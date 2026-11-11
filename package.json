@@ -1,6 +1,6 @@
 {
   "name": "kijanikiosk-payments",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "KijaniKiosk payments service (CI pipeline target)",
   "main": "dist/index.js",
   "files": [
@@ -30,5 +30,8 @@
     "eslint": "^9.0.0",
     "jest": "^29.7.0",
     "jest-junit": "^16.0.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1166.0"
   }
 }
