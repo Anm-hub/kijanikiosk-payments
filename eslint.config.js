@@ -7,6 +7,7 @@ const nodeGlobals = {
   process: "readonly",
   console: "readonly",
   __dirname: "readonly",
+  Buffer: "readonly",
 };
 
 const jestGlobals = {
